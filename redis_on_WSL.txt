@@ -1,0 +1,31 @@
+(BASE) In Ubuntu =>
+
+sudo apt install redis
+sudo systemctl start redis
+
+If systemd not PID1:
+	(WSL 2+) => (PS: wsl --version)
+	(1) In Ubuntu
+		sudo nano /etc/wsl.conf
+		add:
+		[boot]
+		systemd=true
+	(2) In Powershell
+		wsl --shutdown
+	(3) In Ubuntu
+		ps -p 1 -o comm=
+		systemctl status
+
+Redis
+(A) In Ubuntu
+sudo apt install redis
+
+(base)  XYZUSER@COMPUTERNAME:~$ systemctl start redis
+Failed to start redis.service: Interactive authentication required.
+See system logs and 'systemctl status redis.service' for details.
+(base)  XYZUSER@COMPUTERNAME:~$ sudo systemctl start redis
+[sudo] password for XYZUSER:
+
+sudo systemctl status redis
+
+redis-cli => ping
