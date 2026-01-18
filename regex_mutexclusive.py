@@ -16,3 +16,19 @@ intersection = nfa1.intersection(nfa2)
 mutually_exclusive = intersection.is_empty()
 
 print(mutually_exclusive)
+
+import re
+
+NON_REGULAR = re.compile(
+    r"""
+    \(\?=|\(\?!|\(\?<=|\(\?<!|   # lookarounds
+    \\[1-9]|                     # backreferences
+    \(\?\(|                       # conditional
+    \\b|\\B
+    """,
+    re.VERBOSE,
+)
+
+def assert_regular(regex):
+    if NON_REGULAR.search(regex):
+        raise ValueError("Regex is not regular and cannot be converted")
