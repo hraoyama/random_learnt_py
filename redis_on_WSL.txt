@@ -1,3 +1,10 @@
+
+https://github.com/jaibehl97/databricks_genie_mcp
+https://medium.com/@flindcood/building-an-intelligent-query-interface-for-databricks-with-genie-and-mcp-b95709999b7b
+https://abd-01.github.io/posts/2024-01-15-PySide6-Notes/
+
+
+
 (BASE) In Ubuntu =>
 
 sudo apt install redis
